@@ -6,7 +6,7 @@ if (localStorage.getItem('products')) {
     products = JSON.parse(localStorage.getItem('products'));
     showProducts('donuts');
 } else {
-    fetch('./js/products.json')
+    fetch('../js/products.json')
         .then(response => response.json())
         .then(data => {
             products = data;
@@ -44,7 +44,7 @@ function showProducts(category = 'all') {
         `;
         productDiv.querySelectorAll('.product-link').forEach(el => {
             el.addEventListener('click', function () {
-                window.location.href = `./pages/details.html?id=${product.id}`;
+                window.location.href = `./details.html?id=${product.id}`;
             });
         });
         rowDiv.appendChild(productDiv);

@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         successMessage.classList.add("text-success");
 
         setTimeout(() => {
-            window.location.href = "../pages/login.html";
+            window.location.href = "./login.html";
         }, 2000);
     });
 });
