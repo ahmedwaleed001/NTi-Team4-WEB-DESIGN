@@ -150,7 +150,7 @@ body {
     padding: 80px 0;
       margin-top: 84px;
     z-index: 1;
-    background-image: url('./images/donut-banner.jpg');
+    background-image: url('../images/donut-banner.jpg');
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
@@ -232,16 +232,16 @@ body {
     background-position: center;
 }
 .car1 {
-    background-image: url(./images/donuts.jpg);
+    background-image: url(../images/donuts.jpg);
 }
 .car2 {
-    background-image: url(./assets/img/category/sandwiches.jpg);
+    background-image: url(../images/sandwiches.jpg);
 }
 .car3 {
-    background-image: url(./assets/img/category/coffee.jpg);
+    background-image: url(../images/coffee.jpg);
 }
 .car4 {
-    background-image: url(./assets/img/category/ice-blended.jpg);
+    background-image: url(../images/ice-blended.jpg);
 }
 
 .category-card {
@@ -409,8 +409,6 @@ body {
 		--carousel-item-height: 450px;
 		--carousel-item-gap: 2rem;
 
-		
-
 		position: relative;
 		width: var(--carousel-width);
 		height: var(--carousel-item-height);
@@ -428,13 +426,10 @@ body {
 
 		&[reverse] > article {
 			animation-direction: reverse;
-            
 		}
 		/* hover pauses animation */
 		&:hover > article {
 			animation-play-state: paused;
-             
-            
 		}
 	}
 	.carousel > article {
@@ -453,7 +448,7 @@ body {
         padding: 10px;
 	    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.100);
 		padding-block-end: 1rem;
-		background: light-dark(white, rgba(255 255 255 / 0.05));
+		background: white;
 		 
 		/* animation */
 		will-change: transform;
@@ -490,10 +485,8 @@ body {
 		}
 	}
 	.carousel img {
-		
 		height: 100%;
 		object-fit: cover;
-
 		border-radius: 10px 10px 0 0;
 	}
 	.carousel > article > *:not(img) {
@@ -521,7 +514,6 @@ body {
         font-weight: 900;
         text-align: center;
         font-size: 15px !important;
-        
 	}
 	.carousel > article a {
 		text-decoration: none !important;
@@ -567,16 +559,13 @@ body {
 		
 	}
     body {
-		background-color: light-dark(var(--bg-light), var(--bg-dark));
+		background-color: var(--bg-light);
 		
         		
 		margin: 0;
-		
-		
 		font-family: "Abel", sans-serif;
 		line-height: 1.5;
 		/* display: grid; */
-		
 		gap: 2rem;
 	}
 }
@@ -586,7 +575,7 @@ body {
 
 /* ================ end section four ================ */
 
-/*  */
+/* Footer */
 .footer {
     background: #fafafb;
     color: rgb(0, 0, 0);
@@ -607,7 +596,6 @@ body {
     font-family: var(--bs-font-sans-serif);
         line-height: 1.2;
         font-weight: bold;
-
 }
 .foo {
     display: flex;
@@ -672,17 +660,16 @@ body {
     .navbar-nav {
         text-align: center;
         justify-content: center;
-        padding: 100px !important;
+        padding: 20px !important;
     }
 }
 /* Responsive rules for header */
- @media (min-width: 991px){
+@media (min-width: 991px){
      .nav-link i {
         display: none;
      }
-
- }
- @media (max-width: 991px) { 
+}
+@media (max-width: 991px) { 
        .navbar-collapse {
         background-color: white;
         padding: 20px;
