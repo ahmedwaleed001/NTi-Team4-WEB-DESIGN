@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     clearProductsBtn.addEventListener("click", async function () {
       if (confirm("هل أنت متأكد أنك تريد إعادة ضبط المنتجات للأصل؟")) {
         try {
-          const response = await fetch('/js/products.json');
+          const response = await fetch('./js/products.json');
           const productsFromFile = await response.json();
           localStorage.setItem("products", JSON.stringify(productsFromFile));
         } catch (error) {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // تحميل المنتجات من ملف products.json فقط إذا كان localStorage فاضي
   if (!localStorage.getItem("products")) {
     try {
-      const response = await fetch('/js/products.json');
+      const response = await fetch('./js/products.json');
       const productsFromFile = await response.json();
       products = [...productsFromFile];
       localStorage.setItem("products", JSON.stringify(products));
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       name: document.getElementById("productName").value,
       price: parseFloat(document.getElementById("price").value),
       category: document.getElementById("category").value,
-      image: imageUrl || '/assets/img/donuts/default.png',
+      image: imageUrl || './assets/img/donuts/default.png',
       description: document.getElementById("description").value
     };
 
