@@ -150,7 +150,7 @@ body {
     padding: 80px 0;
       margin-top: 84px;
     z-index: 1;
-    background-image: url('/images/donut-banner.jpg');
+    background-image: url('./images/donut-banner.jpg');
     background-repeat: no-repeat;
     background-position: right;
     background-size: cover;
@@ -232,16 +232,16 @@ body {
     background-position: center;
 }
 .car1 {
-    background-image: url(/images/donuts.jpg);
+    background-image: url(./images/donuts.jpg);
 }
 .car2 {
-    background-image: url(/assets/img/category/sandwiches.jpg);
+    background-image: url(./assets/img/category/sandwiches.jpg);
 }
 .car3 {
-    background-image: url(/assets/img/category/coffee.jpg);
+    background-image: url(./assets/img/category/coffee.jpg);
 }
 .car4 {
-    background-image: url(/assets/img/category/ice-blended.jpg);
+    background-image: url(./assets/img/category/ice-blended.jpg);
 }
 
 .category-card {
