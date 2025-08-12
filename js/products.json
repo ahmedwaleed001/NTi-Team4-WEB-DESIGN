@@ -35,7 +35,7 @@
         "id": 5,
         "name": "Lemon Zest Donut",
         "price": 2.60,
-        "image": "/assets/img/donuts/Chocolate-Explosion.png",
+        "image": "./assets/img/donuts/Chocolate-Explosion.png",
         "description": "A zesty lemon-flavored donut with a light glaze.",
         "category": "donuts"
     },
@@ -83,7 +83,7 @@
         "id": 11,
         "name": "Americano",
         "price": 2.60,
-        "image": "/assets/img/coffee/Americano.png",
+        "image": "./assets/img/coffee/Americano.png",
         "description": "A zesty lemon-flavored donut with a light glaze.",
         "category": "Coffee"
     },
@@ -131,7 +131,7 @@
         "id": 17,
         "name": "Caramel Macchiato",
         "price": 4.00,
-        "image": "/assets/img/ice-blended/detail-Strawberry-Milkshake.png",
+        "image": "./assets/img/ice-blended/detail-Strawberry-Milkshake.png"
         "description": "A sweet caramel macchiato with layers of espresso and steamed milk.",
         "category": "Ice Blended"
     },
