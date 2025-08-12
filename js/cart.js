@@ -37,7 +37,7 @@ function addToCart(productId) {
     let products = JSON.parse(localStorage.getItem('products'));
     if (!products) {
         // fallback: fetch from products.json
-        fetch('./js/products.json')
+        fetch('../js/products.json')
             .then(res => res.json())
             .then(data => {
                 localStorage.setItem('products', JSON.stringify(data));

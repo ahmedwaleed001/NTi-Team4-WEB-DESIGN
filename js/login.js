@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // توجيه حسب الدور
     setTimeout(() => {
       if (matchedUser.role === "admin") {
-        window.location.href = "./pages/admin.html";
+        window.location.href = "./admin.html";
       } else {
         window.location.href = "../index.html";
       }
