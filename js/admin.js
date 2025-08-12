@@ -1,20 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  // زر مسح المنتجات من localStorage
-  const clearProductsBtn = document.getElementById("clearProductsBtn");
-  if (clearProductsBtn) {
-    clearProductsBtn.addEventListener("click", async function () {
-      if (confirm("هل أنت متأكد أنك تريد إعادة ضبط المنتجات للأصل؟")) {
-        try {
-          const response = await fetch('../js/products.json');
-          const productsFromFile = await response.json();
-          localStorage.setItem("products", JSON.stringify(productsFromFile));
-        } catch (error) {
-          localStorage.removeItem("products");
-        }
-        window.location.reload();
-      }
-    });
-  }
+
+  
   const usersTableBody = document.querySelector("#usersTable tbody");
   const productsTableBody = document.querySelector("#productsTable tbody");
 
