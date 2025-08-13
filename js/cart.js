@@ -33,18 +33,31 @@ function saveUserCart(cart) {
 
 // Add product to cart
 function addToCart(productId) {
-    // Get products from localStorage or fetch
-    let products = JSON.parse(localStorage.getItem('products'));
-    if (!products) {
-        // fallback: fetch from products.json
-        fetch('../js/products.json')
-            .then(res => res.json())
-            .then(data => {
-                localStorage.setItem('products', JSON.stringify(data));
-                addToCart(productId);
-            });
-        return;
-    }
+    // دائماً تحديث المنتجات من products.json لضمان البيانات الحديثة
+    fetch('../js/products.json')
+        .then(res => res.json())
+        .then(data => {
+            // دمج البيانات من الملف مع المنتجات المحلية
+            const localProducts = JSON.parse(localStorage.getItem('products')) || [];
+            const maxFileId = Math.max(...data.map(p => p.id || 0));
+            const localOnlyProducts = localProducts.filter(p => (p.id || 0) > maxFileId);
+            
+            // دمج المنتجات وتحديث localStorage
+            const products = [...data, ...localOnlyProducts];
+            localStorage.setItem('products', JSON.stringify(products));
+            
+            // متابعة إضافة المنتج للسلة
+            proceedWithAddToCart(productId, products);
+        })
+        .catch(error => {
+            console.error('Error loading products:', error);
+            // في حالة فشل التحميل، استخدم البيانات المحلية
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+            proceedWithAddToCart(productId, products);
+        });
+}
+
+function proceedWithAddToCart(productId, products) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
     let cart = getUserCart();

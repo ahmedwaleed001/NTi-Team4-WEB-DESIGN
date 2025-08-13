@@ -91,7 +91,7 @@
         "id": 12,
         "name": "Chocolate Explosion Donut",
         "price": 3.20,
-        "image": "../assets/img/donuts/Chocolate-Explosion.png",
+        "image": "../assets/img/coffee/Cappuccino.png",
         "description": "Freshly brewed espresso shots combined with water, available hot or iced.",
         "category": "Coffee"
     },
@@ -99,7 +99,7 @@
         "id": 13,
         "name": "Beach Ball Carnival Sprinkles Donut",
         "price": 2.90,
-        "image": "../assets/img/donuts/beach-ball-carnival-sprinkles.png",
+        "image": "../assets/img/coffee/Coffee-Frappe.png",
         "description": "A fun donut with colorful carnival sprinkles and a light glaze.",
         "category": "Coffee"
     },
@@ -107,7 +107,7 @@
         "id": 14,
         "name": "Midnight Madness Donut",
         "price": 3.50,
-        "image": "../assets/img/donuts/Midnight-Madness.png",
+        "image": "../assets/img/coffee/Cold-Brew.png",
         "description": "A dark chocolate donut with a midnight blue glaze and edible glitter.",
         "category": "Coffee"
     },
@@ -115,7 +115,7 @@
         "id": 15,
         "name": "Chocolate Covered Strawberry Donut",
         "price": 3.00,
-        "image": "../assets/img/donuts/chocolate-covered-strawberry.png",
+        "image": "../assets/img/coffee/Cookie-Crumble-Frappe.png",
         "description": "A delightful donut topped with chocolate glaze and fresh strawberry slices.",
         "category": "Coffee"
     },

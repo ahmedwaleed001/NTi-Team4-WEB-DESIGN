@@ -16,18 +16,28 @@ document.addEventListener("DOMContentLoaded", async () => {
   let products = [];
   let filteredProducts = [];
 
-  // تحميل المنتجات من ملف products.json فقط إذا كان localStorage فاضي
-  if (!localStorage.getItem("products")) {
-    try {
-      const response = await fetch('../js/products.json');
-      const productsFromFile = await response.json();
-      products = [...productsFromFile];
-      localStorage.setItem("products", JSON.stringify(products));
-    } catch (error) {
-      console.error('Error loading products:', error);
-      products = [];
-    }
-  } else {
+  // تحميل المنتجات من ملف products.json دائماً لضمان التحديث
+  try {
+    const response = await fetch('../js/products.json');
+    const productsFromFile = await response.json();
+    
+    // دمج المنتجات من الملف مع أي منتجات مضافة محلياً
+    const localProducts = JSON.parse(localStorage.getItem("products")) || [];
+    
+    // الحصول على المنتجات المضافة محلياً (التي لها id أكبر من أكبر id في الملف)
+    const maxFileId = Math.max(...productsFromFile.map(p => p.id || 0));
+    const localOnlyProducts = localProducts.filter(p => (p.id || 0) > maxFileId);
+    
+    // دمج منتجات الملف مع المنتجات المحلية الجديدة
+    products = [...productsFromFile, ...localOnlyProducts];
+    
+    // تحديث localStorage بالبيانات المدموجة
+    localStorage.setItem("products", JSON.stringify(products));
+    
+    console.log(`تم تحميل ${productsFromFile.length} منتج من الملف و ${localOnlyProducts.length} منتج محلي`);
+  } catch (error) {
+    console.error('Error loading products:', error);
+    // في حالة فشل تحميل الملف، استخدم البيانات المحلية
     products = JSON.parse(localStorage.getItem("products")) || [];
   }
   filteredProducts = [...products];
