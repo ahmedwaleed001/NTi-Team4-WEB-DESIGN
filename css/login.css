@@ -1,6 +1,6 @@
 /*  page background */
 body {
-    background: url('./images/backg2.png') center/cover no-repeat fixed;
+    background: url('../images/backg2.png') center/cover no-repeat fixed;
     min-height: 100vh;
 }
 
